@@ -71,8 +71,8 @@ PlanarJointModel::PlanarJointModel(const std::string& name, size_t joint_index, 
   variable_bounds_[0].max_position_ = std::numeric_limits<double>::infinity();
   variable_bounds_[1].min_position_ = -std::numeric_limits<double>::infinity();
   variable_bounds_[1].max_position_ = std::numeric_limits<double>::infinity();
-  variable_bounds_[2].min_position_ = -M_PI;
-  variable_bounds_[2].max_position_ = M_PI;
+  variable_bounds_[2].min_position_ = -2 * M_PI;
+  variable_bounds_[2].max_position_ = 2 * M_PI;
 
   computeVariableBoundsMsg();
 }
