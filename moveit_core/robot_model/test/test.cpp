@@ -229,7 +229,7 @@ TEST(PlanarJointTest, InterpolateDiffDriveNoNan)
     { "Straight line along X", { 0.0, 0.0, 0.0 }, { 0.1, 0.0, 0.0 } },
     { "Straight line along Y", { 0.0, 0.0, M_PI / 2 }, { 0.0, 0.1, M_PI / 2 } },
     { "180 degree turn in place", { 0.0, 0.0, 0.0 }, { 0.0, 0.0, M_PI } },
-    { "360 degree turn in place", { 0.0, 0.0, -M_PI}, { 0.0, 0.0, M_PI} },
+    { "360 degree turn in place", { 0.0, 0.0, -M_PI }, { 0.0, 0.0, M_PI } },
     { "Diagonal movement", { 0.0, 0.0, -M_PI / 4 }, { 0.1, -0.1, -M_PI / 4 } },
     { "Complex move", { 0.5, 1.0, -M_PI / 2 }, { -0.7, -1.0, M_PI / 3 } }
   };
@@ -237,7 +237,7 @@ TEST(PlanarJointTest, InterpolateDiffDriveNoNan)
   // Test interpolation for each case and check for NaN values
   for (const auto& test_case : test_cases)
   {
-    for (double t: { 0.0, 0.5, 1.0 })
+    for (double t : { 0.0, 0.5, 1.0 })
     {
       double state[3];
       pjm.interpolate(test_case.from, test_case.to, t, state);
